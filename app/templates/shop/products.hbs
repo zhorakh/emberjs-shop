@@ -1,0 +1,27 @@
+<div class="shop-wrapper">
+  <h1 align="center">{{#link-to "shop"}}Shops{{/link-to}} / {{model.name}}</h1>
+  <div class="list-table">
+    <div class="list-table-header">
+      <div class="list-table-row">
+        <div class="list-table-col">Name</div>
+        <div class="list-table-col">QTY</div>
+        <div class="list-table-col">Price</div>            
+      </div>
+    </div>
+    <div class="list-table-body">
+      {{#each this.model.products as |product|}}
+        {{shop/product-item product=product model=model}}
+        {{else}}
+        <p align="center">There is no product, You can add it!</p>
+      {{/each}}
+      {{#if this.model.products.length}}
+        <div class="list-table-row product">
+          <div class="list-table-col"></div>
+          <div class="list-table-col"></div>
+          <div class="list-table-col">Total Price {{model.totalPrice}}$</div>    
+        </div>
+      {{/if}}
+    </div>        
+  </div>
+  {{shop/add-product model=model}}
+</div>

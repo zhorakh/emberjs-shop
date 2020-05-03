@@ -1,0 +1,15 @@
+<div class="shop-wrapper">
+  <h1 align="center">Shops</h1>
+  <div class="shop list-table">
+    <div class="list-table-body">
+      {{#each this.model as |shop|}}
+        {{shop/shop-item shop=shop}}
+      {{else}}
+        <p align="center">There is no shop, You can add it!</p>
+      {{/each}}
+    </div>
+  </div>
+  <div class="add-new-item-box">
+    {{shop/add-shop}}
+  </div>
+</div>

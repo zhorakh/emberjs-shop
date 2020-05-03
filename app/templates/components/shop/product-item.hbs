@@ -1,0 +1,24 @@
+<div class="list-table-row product">
+  {{#unless editMood}}
+    <div class="list-table-col">{{product.name}}</div>
+    <div class="list-table-col">{{product.qty}}</div>
+    <div class="list-table-col">
+      {{product.price}}$
+      <div class="product-item-actions">
+        <button class="button primary" {{action "changeEditMood"}}>Edit</button>
+        <button class="button danger" {{action "deleteProduct" model product.id}}>Delete</button>
+      </div>
+    </div>   
+  {{/unless}}    
+  {{#if editMood}}
+    <div class="list-table-col">{{input class="input" value=name placeholder="Name"}}</div>
+    <div class="list-table-col">{{input type="number"  class="input" value=qty placeholder="QTY" }}</div>
+    <div class="list-table-col">
+      {{input type="number"  class="input" value=price placeholder="Price"}}            
+      <div class="product-item-actions">
+        <button class="button success" {{action "editProduct" model product.id}}>Save</button>
+        <button class="button warning" {{action "changeEditMood"}}>Cancel</button>
+      </div>
+    </div>
+  {{/if}}     
+</div>

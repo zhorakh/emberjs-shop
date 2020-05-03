@@ -1,0 +1,20 @@
+<div class="add-new-item-box">
+  {{#unless editMood}}
+    <button 
+      class="add-new-item-button"
+      {{action "changeEditMood"}}
+    >Add Product
+    </button>
+  {{/unless}}
+  {{#if showNotification}}
+    <span>{{notification}}</span>
+  {{/if}}
+
+  {{#if editMood}}
+    <button class="button {{if this.disabled 'disabled' 'success'}}" {{action "addNewShop" model}} disabled={{disabled}}>Create</button>
+    <button class="button warning"{{action "changeEditMood"}}>Cancel</button>
+    {{input value=name class="input" placeholder="Name"}}
+    {{input value=qty class="input" placeholder="QTY" type="number"}}
+    {{input value=price class="input" placeholder="Price" type="number"}}
+  {{/if}}
+</div>

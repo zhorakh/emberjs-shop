@@ -1,0 +1,23 @@
+<div class="list-table-row">
+  <div class="list-table-col">
+    {{#if editMood}}
+      {{input value=name  placeholder="Name" class="input"}}
+    {{else}}
+      {{#link-to "shop.products" shop.id}}    
+        {{shop.name}}
+      {{/link-to}}
+    {{/if}}
+  </div>
+  <div class="list-table-col">
+    {{#if showNotification}}
+      <span>{{notification}}</span>
+    {{/if}}
+    {{#if editMood}}
+      <button class="button success" {{action "editShop" shop.id}} disabled={{disabled}}>Save</button>
+      <button class="button warning" {{action "changeEditMood"}}>Cancel</button>            
+    {{else}}
+      <button class="button primary" {{action "changeEditMood"}}>Edit</button>
+      <button class="button danger" {{action "deleteShop" shop.id}}>Delete</button>                    
+    {{/if}}
+  </div>
+</div>

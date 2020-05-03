@@ -1,0 +1,119 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.shop-wrapper {
+  padding: 100px 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.list-table{
+  border: 2px dotted #a0a0a0;
+  border-radius: 10px;    
+  background : #f6f6f6;        
+}
+
+.shop.list-table {
+  padding: 20px 20px 100px;
+}
+
+.list-table-header {
+  border-bottom : 2px dotted #a0a0a0;
+}
+
+.list-table-header .list-table-row {
+  border: none;
+}
+
+.list-table-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+
+}
+
+.list-table-row.product > .list-table-col:nth-child(2),
+.list-table-header .list-table-col:nth-child(2) {
+  border-right: 2px dotted #a0a0a0;
+  border-left: 2px dotted #a0a0a0;
+  flex-basis: 70px;
+}
+.list-table-row:not(.shop) .list-table-col:last-child {
+  position: relative;
+}
+
+.list-table-row:not(:first-child), 
+.list-table-row:not(:last-child),
+.list-table-row {
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.list-table-col {
+  padding : 10px 30px;
+}
+
+.list-table-col:not(:nth-child(2)) {
+  flex-basis: 200px;
+}
+
+.product-item-actions {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translate(10px, -50%);
+  width: 100%;
+}
+
+.list-table-row .input {
+  width: 100%;
+}
+
+.input {
+  padding : 8px;
+}
+
+.button {
+  padding : 10px;
+  color : #fff;
+  font-weight: 500;
+  border : none;
+}
+
+.button:hover, 
+.add-new-item-button:hover{ cursor: pointer; }
+
+.button.success { background: #66c066; }
+
+.button.success:hover { background: #449d44; }
+
+.button.warning { background: #f2b658; }
+
+.button.warning:hover { background: #f0ad4e; }
+
+.button.danger { background: #de5e5a; }
+
+.button.danger:hover { background: #c9302c; }
+
+.button.primary { background: #3a85bf; }
+
+.button.primary:hover { background: #337ab7; }
+
+.button.disabled { background: #5f5f5f}
+.button.disabled:hover {
+  background: #7d7979;
+  cursor: not-allowed;
+}
+
+.add-new-item-box{
+  padding : 20px 0;
+}
+
+.add-new-item-button {
+  padding: 10px 40px;
+  background: #000;
+  border: none;
+  border-radius: 0;
+  color : #fff;
+}
